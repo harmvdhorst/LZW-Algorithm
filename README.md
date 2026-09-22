@@ -1,11 +1,11 @@
 # LZW-Algorithm
 
-Student: Harm van der Horst
-Studentnummer: 2145671
-Mail: hhs.vanderhorst@student.han.nl
-Klas: ITN-CNI-A-s
-Docent: Dennis Breuker
-Course: Algorithms, Programming Languages and Paradigms
-Datum + Versie: 22/09/2026 v1.0.0
+Student: Harm van der Horst <br/>
+Studentnummer: 2145671 <br/>
+Mail: hhs.vanderhorst@student.han.nl <br/>
+Klas: ITN-CNI-A-s <br/>
+Docent: Dennis Breuker <br/>
+Course: Algorithms, Programming Languages and Paradigms <br/>
+Datum + Versie: 22/09/2026 v1.0.0 <br/>
 
 Voor documentatie/verslag zie [Wiki](https://github.com/harmvdhorst/LZW-Algorithm/wiki)
