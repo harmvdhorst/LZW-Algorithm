@@ -30,6 +30,29 @@
            ;; update the state with the rest of the vector minus the first one
            (recur (rest data) (assoc dict :c 1)))))))
 
+(defn compressChar [chars, dict]
+  ;; first we fetch the char we are currently encoding
+  (let [current (first chars)]
+    ;; then we make a string for the extra chars + make a state for the rest of the chars
+    (loop [extraString "", extraChars (rest chars)]
+      ;; we need to make a failsafe for and empty chars vector
+      (when (seq extraChars)
+        ;; now we check if our new string is in the dict
+       (if (not (contains? dict (str current extraString)))
+         ;; we found a char combination which does not already exist in the dictionary
+         ;; no we find the next free index for our newly found
+         (let [nextIndex (inc (apply max (vals dict)))]
+           ;; we get the last string combo for return value
+           (let [prevString (apply str (drop-last extraString))]
+           ({
+             ;; we add the new string to dict
+             :dict (assoc dict extraString nextIndex),
+             ;; create the output
+             :output (get dict prevString)
+             })))
+         ;; already exists so we add the next char and try again
+         (recur (str extraString (first extraChars)) (rest extraChars)))))))
+
 
 ;; Here I run the main function with some really simple text to trigger the compression
 (compress "ABAAABBACABABCADD")
